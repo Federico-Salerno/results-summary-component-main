@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;500;700;800&display=swap');
 
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: local('Hanken Grotesk'), url(../assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+    font-weight: 500, 700, 900;
+    font-display: swap;
+}
 :root{
     /* Font */
-    --font-hanken-grotesk: 'Hanken Grotesk', sans-serif;
+    --font-hanken-grotesk: "Hanken Grotesk";
 
     /* Colors */
 
@@ -12,10 +17,10 @@
     --Green-teal: hsl(166, 100%, 37%);
     --Cobalt-blue: hsl(234, 85%, 45%);
 
-    --Light-red-bg: hsl(0, 100%, 67%, .1);
-    --Orangey-yellow-bg: hsl(39, 100%, 56%, .1);
-    --Green-teal-bg: hsl(166, 100%, 37%, .1);
-    --Cobalt-blue-bg: hsl(234, 85%, 45%, .1);
+    --Light-red-bg: hsla(0, 100%, 67%, .1);
+    --Orangey-yellow-bg: hsla(39, 100%, 56%, .1);
+    --Green-teal-bg: hsla(166, 100%, 37%, .1);
+    --Cobalt-blue-bg: hsla(234, 85%, 45%, .1);
 
     /*Gradients*/
     --Light-slate-blue-background: hsl(252, 100%, 67%);
@@ -39,22 +44,30 @@
     --Light-lavender: hsl(241, 100%, 89%);
     --Dark-gray-blue: hsl(224, 30%, 27%);
 
-
+    /*Font-size*/
+    --fs-12: .75rem;
+    --fs-15: .937rem;
+    --fs-18: 1.125rem;
+    --fs-20: 1.25rem;
+    --fs-24: 1.5rem;
+    --fs-28: 1.75rem;
+    --fs-32: 2rem;
+    --fs-55: 3.4375rem; 
+    --fs-72: 4.5rem;
+    --fs-80: 5rem;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;   
+    font-family: var(--font-hanken-grotesk); 
 }
 
 main{
     width: 375px;
     height: 809px;
-}
-
-.main-container{
-    font-family: var(--font-hanken-grotesk);
+    margin: auto;
 }
 
 .main-result{
@@ -70,7 +83,7 @@ main{
 }
 
 .main-result h1{
-    font-size: 18px;
+    font-size: var(--fs-18);
     font-weight: 700;
     padding-top: 25px;
     color: var(--Light-lavender);
@@ -107,7 +120,7 @@ main{
 }
 
 .circle span{
-    font-size: 55px;
+    font-size: var(--fs-55);
     font-weight: 800;
     padding-top: 5px;
     color: var(--White);
@@ -122,15 +135,16 @@ main{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 17px;
 }
 
 .summary{
-    padding: 2.8vw 5vh 2.3vw 5vh;
+    padding: 2.8vw 3.4vh 2.3vw 3.4vh;
 }
 
 .summary h2{
-    font-size: 18px;
-    padding-bottom: 15px;
+    font-size: var(--fs-18);
+    padding-bottom: 22px;
 }
 
 .title{
@@ -141,11 +155,10 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 315px;
+    width: 100%;
     height: 55px;
-    font-size: 15px;
+    font-size: var(--fs-15);
     font-weight: 700;
-    margin: 10px;  
     padding: 15px;
     border-radius: 10px;  
 }
@@ -203,7 +216,7 @@ main{
 button a{
     color: var(--White);
     text-decoration: none;
-    font-size: 18px;
+    font-size: var(--fs-18);
     font-weight: 500;
 }
 
@@ -212,7 +225,6 @@ button{
     border: none;
     width: 315px;
     height: 55px;
-    margin-top: 20px;
     border-radius: 50px;
     
 }
@@ -222,10 +234,9 @@ button:focus-visible{
     background-image: var(--gradient-primary);
 }
 .attribution{ 
-    font-size: 11px; 
     text-align: center; 
     font-family: var(--font-hanken-grotesk);
-    font-size: 12px;
+    font-size: var(--fs-12);
     color: var(--Dark-gray-blue);
     
 }
@@ -233,4 +244,92 @@ button:focus-visible{
     color: hsl(228, 45%, 44%);
     text-decoration: none;
     color: var(--Cobalt-blue);
+}
+
+
+@media only screen and ( min-width: 600px){
+
+    body{
+        min-height: 100vh;
+    }
+    
+    main{
+        display: flex;
+        width: 770px;
+        margin: auto;
+    }
+
+    .main-result{
+        width: 370px;
+        height: 512px;
+        border-radius: 32px;
+        gap: 1px;
+        z-index: 2;
+    }
+
+    .main-result h1{
+        font-size: var(--fs-24);
+        padding-top: 37px;
+    }
+
+    
+
+    .circle{
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle span{
+        font-size: var(--fs-72);
+        padding-top: 23px;
+        height: 100px;
+        
+    }
+
+    .circle p{
+        padding-bottom: 27px;
+        
+    }
+
+    .result{
+        margin-bottom: 55px;
+    }
+
+    .main-result h2{
+        font-size: var(--fs-28);
+        padding-bottom: 19px;
+    }
+
+    .main-result p{
+        font-size: var(--fs-18);
+        text-align: center;
+    }
+
+    .summary{
+        width: 400px;
+        height: 512px;
+        padding: 3.2vw 5.5vh 4.6vw 11.7vh;
+        border-radius: 0 32px 32px 0;
+        box-shadow: .08rem .08rem 1.5rem var(--Light-lavender);
+        position: relative;
+        right: 35px;
+        
+        z-index: 1;
+    }
+    .summary h2{
+        font-size: var(--fs-24);
+        margin-bottom: 7px;
+    }
+
+    .signs{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 17px;
+    }
+    button{
+        margin-top: 25px;
+        width: 288px;
+    }
 }
